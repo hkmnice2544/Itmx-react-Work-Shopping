@@ -1,0 +1,15 @@
+.cart {
+  padding: 16px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  background-color: lightgray;
+}
+
+.cart span {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Itim";
+}

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Playfair+Display:ital,wght@0,500;0,700;1,700&family=Prompt:wght@200&display=swap");
+.title {
+  margin: 30px;
+}
+
+.product {
+  margin: 10px;
+  padding: 10px 10px;
+  width: 450px;
+  height: 170px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 1px gainsboro;
+  float: left;
+}
+
+.product:hover {
+  background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+  border: 1px solid #ffffff; /* เพิ่มเส้นขอบเมื่อ hover */
+  box-shadow: 5px 5px 5px rgb(182, 182, 182);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup button {
+  cursor: pointer;
+}
+
+.Img {
+  float: left;
+}
+.Name {
+  float: left;
+  font-family: "Kanit", sans-serif;
+}
+
+.Detail {
+  float: left;
+}
+.close {
+  float: right;
+}
+.qty {
+  margin-top: 20px;
+  text-align: center;
+}
+.cart {
+  margin-top: 20px;
+  font-family: "Kanit", sans-serif;
+}
+.popName {
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
+}
+.popPrice {
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
+}
+.popDetail {
+  font-family: "Kanit", sans-serif;
+}
+.popImg {
+  position: relative;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ที่มีขนาดเท่ากัน */
+  gap: 16px; /* ระยะห่างระหว่าง item */
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 16px;
+}

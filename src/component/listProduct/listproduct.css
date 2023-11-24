@@ -1,0 +1,77 @@
+.list-product-container {
+  margin: 20px;
+}
+
+.product-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+  min-height: 100px;
+}
+
+.product-image {
+  margin-right: 10px;
+  max-width: 100px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.product-info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* เพิ่มบรรทัดนี้เพื่อให้ปุ่ม Quantity อยู่ตรงกลาง */
+}
+
+.quantity-control button {
+  margin: 0 5px;
+}
+
+.product-table tbody tr {
+  background-color: #f8f9fa;
+}
+
+.product-table tbody tr td {
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+  overflow: hidden;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* ให้ปรับขนาดของบรรทัดที่ปรับตำแหน่งไปอีก */
+.product-table tbody tr {
+  display: flex;
+  align-items: center;
+}
+
+/* ปรับลักษณะสีของปุ่ม Delete */
+.product-table tbody tr td:last-child button {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* ปรับลักษณะของ checkbox */
+.product-table tbody tr td:first-child input {
+  margin-right: 10px;
+  transform: scale(1.5); /* เพิ่มบรรทัดนี้เพื่อปรับขนาดของ checkbox */
+}
+
+/* เพิ่ม animation เมื่อ hover ที่แถวของตาราง */
+.product-table tbody tr:hover {
+  background-color: #e2e6ea;
+  transition: background-color 0.3s ease;
+}
+
+.h1 {
+  font-family: "Itim", cursive;
+}
