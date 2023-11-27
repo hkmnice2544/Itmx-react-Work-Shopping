@@ -36,15 +36,16 @@
     transform: rotate(360deg);
   }
 }
-span {
-  font-family: "Playfair Display", serif;
+span{
+  font-family: 'Playfair Display', serif;
 }
-h3 {
-  font-family: "Playfair Display", serif;
+h3{
+  font-family: 'Playfair Display', serif;
 }
-p {
-  font-family: "Playfair Display", serif;
+p{
+  font-family: 'Playfair Display', serif;
+
 }
-td {
-  font-family: "Playfair Display", serif;
+td{
+  font-family: 'Playfair Display', serif;
 }
