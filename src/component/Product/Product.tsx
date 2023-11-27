@@ -2,10 +2,11 @@ import React from "react";
 import "./Product.css";
 import Item from "./Item";
 interface ProductProps {
-  searchTerm: string; // Assuming searchTerm is of type string
+  searchTerm: string; 
+  addToCart: (quantity: number) => void;
 }
 
-const Product: React.FC<ProductProps> = ({ searchTerm }) => {
+const Product: React.FC<ProductProps> = ({ searchTerm,addToCart  }) => {
   const data = [
     {
       id: 1,
@@ -49,18 +50,18 @@ const Product: React.FC<ProductProps> = ({ searchTerm }) => {
       <h3 className="title">PRODUCT</h3>
 
       <div>
-        <table align="center">
+      <table align="center">
           <tbody>
             {filteredData.map(
               (element, index) =>
                 index % 2 === 0 && (
                   <tr key={index}>
                     <td>
-                      <Item {...element} />
+                      <Item {...element} addToCart={addToCart} />
                     </td>
                     {index + 1 < filteredData.length && (
                       <td>
-                        <Item {...filteredData[index + 1]} />
+                        <Item {...filteredData[index + 1]} addToCart={addToCart} />
                       </td>
                     )}
                   </tr>

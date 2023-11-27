@@ -5,55 +5,54 @@ import Button from "react-bootstrap/Button";
 // import Product from '../Product/Product';
 // import Product from "../Product/Product";
 
-interface SelectedProduct {
-  title: string;
-  img: string;
-  details: string;
-  price: number;
-  count: number;
-}
+// interface SelectedProduct {
+//   title: string;
+//   img: string;
+//   details: string;
+//   price: number;
+//   count: number;
+// }
 
 const ListProduct = () => {
   const [isChecked, setChecked] = useState(false);
-  const [selectedProducts, setSelectedProducts] = useState<SelectedProduct[]>(
-    []
-  );
+  // const [selectedProducts, setSelectedProducts] = useState<SelectedProduct[]>(
+  //   []
+  // );
 
   const handleCheckboxChange = () => {
     setChecked(!isChecked);
   };
 
-  const handleIncrement = (index: number) => {
-    const updatedProducts = [...selectedProducts];
-    updatedProducts[index].count += 1;
-    setSelectedProducts(updatedProducts);
-  };
+  // const handleIncrement = (index: number) => {
+  //   const updatedProducts = [...selectedProducts];
+  //   updatedProducts[index].count += 1;
+  //   setSelectedProducts(updatedProducts);
+  // };
 
-  const handleDecrement = (index: number) => {
-    const updatedProducts = [...selectedProducts];
-    if (updatedProducts[index].count > 1) {
-      updatedProducts[index].count -= 1;
-      setSelectedProducts(updatedProducts);
-    }
-  };
+  // const handleDecrement = (index: number) => {
+  //   const updatedProducts = [...selectedProducts];
+  //   if (updatedProducts[index].count > 1) {
+  //     updatedProducts[index].count -= 1;
+  //     setSelectedProducts(updatedProducts);
+  //   }
+  // };
 
   // const handleProductSelect = (productData: SelectedProduct) => {
   //   setSelectedProducts([...selectedProducts, { ...productData, count: 1 }]);
   // };
 
-  const handleDelete = (index: number) => {
-    const updatedProducts = [...selectedProducts];
-    updatedProducts.splice(index, 1);
-    setSelectedProducts(updatedProducts);
-  };
+  // const handleDelete = (index: number) => {
+  //   const updatedProducts = [...selectedProducts];
+  //   updatedProducts.splice(index, 1);
+  //   setSelectedProducts(updatedProducts);
+  // };
 
   return (
     <div className="list-product-container">
       <h1>รถเข็น</h1>
       <Table responsive className="product-table">
         <tbody>
-          {selectedProducts.map((product, index) => (
-            <tr key={index}>
+            <tr>
               <td>
                 <div className="product-row">
                   <input
@@ -62,51 +61,41 @@ const ListProduct = () => {
                     onChange={handleCheckboxChange}
                   />
                   <Image
-                    src={product.img}
-                    alt={`Product ${index + 1}`}
-                    width={100}
-                    rounded
-                    className="product-image"
+                    src="https://www.indexlivingmall.com/_next/image?url=https%3A%2F%2Fmedia.indexlivingmall.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F29b3f741dcafc528943c644b5c704259%2F1%2F2%2F120023931_c_Midst_WT.JPG&w=828&q=75"
+                  width="200px"
                   />
-                  <div className="product-info">{product.title}</div>
+                  <div className="product-info">10</div>
                 </div>
               </td>
               <td>
-                {/* <Product
-                  message={product.price}
-                  onSelectProduct={() => handleProductSelect(product)}
-                /> */}
+                <p>price</p>
               </td>
               <td>
                 <div className="quantity-control">
                   <Button
                     variant="outline-secondary"
-                    onClick={() => handleDecrement(index)}
+                  
                   >
                     -
                   </Button>
-                  <span>{product.count}</span>
+                  <span>0</span>
                   <Button
                     variant="outline-secondary"
-                    onClick={() => handleIncrement(index)}
+                    
                   >
                     +
                   </Button>
                 </div>
               </td>
               <td>
-                {/* <Product
-                  message={product.price * product.count}
-                  onSelectProduct={() => handleProductSelect(product)}
-                /> */}
-              </td>
+               <p>Total</p>              </td>
               <td>
-                <Button variant="danger" onClick={() => handleDelete(index)}>
+                <Button variant="danger" >
                   Delete
                 </Button>
               </td>
             </tr>
-          ))}
+          
         </tbody>
       </Table>
     </div>

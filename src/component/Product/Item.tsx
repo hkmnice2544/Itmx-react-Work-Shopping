@@ -9,8 +9,9 @@ interface ItemProps {
   img: string;
   details: string;
   price: number;
+  addToCart: (quantity: number) => void;
 }
-const Item: React.FC<ItemProps> = ({ title, img, details, price }) => {
+const Item: React.FC<ItemProps> = ({ title, img, details, price,addToCart  }) => {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [count, setCount] = useState(1);
   const [readMore, setReadMore] = useState(false);
@@ -19,7 +20,7 @@ const Item: React.FC<ItemProps> = ({ title, img, details, price }) => {
       <p className="extra-content"></p>
     </div>
   );
-
+  
   const linkName = readMore ? "Read Less  " : "Read More  ";
   const handelIncrement = () => {
     setCount(count + 1);
@@ -37,14 +38,26 @@ const Item: React.FC<ItemProps> = ({ title, img, details, price }) => {
     setPopupVisible(false);
   };
 
+  const handleAddToCart = () => {
+    addToCart(count);
+    setPopupVisible(false);
+  };
+
+
+
   return (
     <div>
-      <table align="center">
+     <table align="center">
         <tbody>
           <tr>
             <td>
               <div className="product" onClick={handleItemClick}>
-                <img className="Img" src={img} alt="P1" width="150px" />
+                <img
+                  className="Img"
+                  src={img}
+                  alt="P1"
+                  width="150px"
+                />
                 <table>
                   <tbody>
                     <tr>
@@ -56,8 +69,8 @@ const Item: React.FC<ItemProps> = ({ title, img, details, price }) => {
                 </table>
                 <table>
                   <tbody>
-                    <tr>
-                      <p className="price"> ฿ {price}</p>
+                  <tr>
+                    <p className="price"> ฿ {price}</p>
                     </tr>
                   </tbody>
                 </table>
@@ -82,8 +95,8 @@ const Item: React.FC<ItemProps> = ({ title, img, details, price }) => {
               <p className="popPrice">ราคา : ฿ {price}</p>
             </div>
             <div>
-              <p className="popDetail" style={{ whiteSpace: "pre-line" }}>
-                รายละเอียด {readMore ? details : details.slice(0, 50)}
+              <p className="popDetail" style={{ whiteSpace: 'pre-line' }}>
+                รายละเอียด  {readMore ? details : details.slice(0, 50)}
                 {details.length > 50 && (
                   <div className="read">
                     <a
@@ -116,8 +129,10 @@ const Item: React.FC<ItemProps> = ({ title, img, details, price }) => {
                 +
               </Button>
               <div className="cart">
-                <Button variant="warning">ADD TO CART</Button>
-              </div>
+          <Button variant="warning" onClick={handleAddToCart}>
+            ADD TO CART
+          </Button>
+        </div>
             </div>
           </div>
         )}

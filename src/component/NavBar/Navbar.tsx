@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+
 interface NavBarProps {
   onSearchChange: (searchTerm: string) => void;
   productCount: number;
@@ -47,17 +48,20 @@ function NavBar({ onSearchChange, productCount }: NavBarProps) {
               </Col>
 
               <Col xs="auto" className="col">
-                <button className="cartButton">
-                  <img
-                    className="img-cart"
-                    src="https://cdn-icons-png.flaticon.com/256/9453/9453946.png"
-                    alt="Cart"
-                    width="40px"
-                  />
-                  {productCount > 0 && (
-                    <div className="notify">{productCount}</div>
-                  )}
-                </button>
+              <a href="../listProduct/listproduct" className="cartLink">
+        <button className="cartButton">
+          <img
+            className="img-cart"
+            src="https://cdn-icons-png.flaticon.com/256/9453/9453946.png"
+            alt="Cart"
+            width="40px"
+          />
+          {productCount > 0 && (
+            <div className="notify">{productCount}</div>
+          )}
+        </button>
+       
+      </a>
               </Col>
             </Row>
           </Form>
